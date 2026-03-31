@@ -1,0 +1,82 @@
+alias -g sell="run stock-sell.js"
+alias -g trader="run stock-trader.js"
+alias -g autoroot="run autoroot.js"
+alias -g backdoor="run backdoor.js"
+alias -g orch="run orchestrator.js"
+alias -g buyer="run server-buyer.js"
+alias -g upgrade="run home-upgrade.js"
+alias -g dnet="run darknet-boot.js"
+alias -g contracts="run contract-solver.js"
+alias -g go="run ipvgo.js"
+alias -g infil="run infiltration-advisor.js"
+alias -g manip="run stock-manipulator.js"
+
+go — IPvGO bot
+go hacking      → vs The Black Hand  — hacking money bonus     (9x9, komi 3.5)
+go hacknet      → vs Netburners      — hacknet production bonus (9x9, komi 1.5)
+go crime        → vs Slum Snakes     — crime success bonus      (9x9, komi 3.5)
+go combat       → vs Tetrads         — combat stats bonus       (7x7, komi 5.5)
+go reputation   → vs Daedalus        — reputation gain bonus    (7x7, komi 5.5)
+go hgw          → vs Illuminati      — hack/grow/weaken speed   (5x5, komi 7.5)
+
+infil — Infiltration advisor
+infil           → sorts by rep per difficulty (default)
+infil rep       → best faction rep efficiency
+infil money     → best cash per difficulty
+infil time      → best rep per estimated time spent
+
+trader — Stock trader
+trader          → just run it, no args needed
+                  auto-detects 4S and switches modes
+                  pre-4S: alerts only
+                  post-4S: full trading with rotation, loss cutoff, symbol timeouts
+
+manip — Stock manipulator
+manip           → just run it, no args needed
+                  auto-detects your open positions from trader
+                  grows linked servers for longs
+                  hacks linked servers for shorts
+
+backdoor — Auto backdoor
+backdoor        → no args, scans full network and backdoors
+                  all rooted servers you meet hacking level for
+
+autoroot — Auto root
+autoroot        → no args, roots all reachable servers
+                  using whatever port crackers you currently have
+
+orch — Orchestrator
+orch            → no args, manages up to 2 batchers
+                  auto-migrates to pserv-0 if available
+                  picks best targets by score automatically
+
+buyer — Server buyer
+buyer           → no args, auto-buys and upgrades pservs
+                  starts at 8GB, upgrades all to same tier
+                  before moving to next tier
+                  keeps $200k cash reserve
+
+upgrade — Home upgrade
+upgrade         → no args, buys home RAM and core upgrades
+                  when you can afford them
+
+contracts — Contract solver
+contracts       → no args, scans all servers for coding
+                  contracts and attempts to solve them
+                  rewards vary by contract type
+
+dnet — Darknet boot
+dnet            → no args, only works once darknetscape.exe
+                  is unlocked, boots darknet connection
+
+sell — Stock sell all
+sell            → no args, emergency sell all stock positions
+                  useful before an augmentation install reset
+
+bootstrap — Run everything
+run bootstrap.js  → sets all aliases above automatically
+                    starts: autoroot, manual-hack, orchestrator,
+                    server-buyer, stock-trader, tor-manager
+                    runs backdoor → contracts → home-upgrade
+                    every 5 minutes in sequence
+                    auto-launches darknet when unlocked
